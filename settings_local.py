@@ -1,0 +1,5 @@
+#!venv/bin/env python
+
+APPLICATION_ID = "ab2PDO430oZeLB4cI4GAUFjdWcgKGtJcQUe291UW"
+REST_API_KEY = "7mjGlKBqovrJxgZY6osHZMkET4AlXlgpyiroNCYl"
+MASTER_KEY = "JL7huXDcdfSzwqPVoRoYJFXve3kXqHFrZzTB2JDM"
