@@ -64,7 +64,7 @@ def freqAnaysis(items, date):
 	return (ingredientFreqency, nutritionFreqency)
 
 
-print freqAnaysis([{"name": "Tomato Soup", "timeStamp":datetime.now()}, {"name": "Tomato", "timeStamp": datetime(2015, 02, 02, 02, 10)}], datetime.now())
+# print freqAnaysis([{"name": "Tomato Soup", "timeStamp":datetime.now()}, {"name": "Tomato", "timeStamp": datetime(2015, 02, 02, 02, 10)}], datetime.now())
 
 
 
