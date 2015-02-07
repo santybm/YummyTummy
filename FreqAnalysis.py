@@ -2,8 +2,6 @@
 from datetime import datetime
 import math
 
-def gaussianEquation(difference):
-	return .1 ** ((difference * difference)/200.0)
 
 def ingredientsForItem(item):
 
@@ -16,6 +14,9 @@ def nutritionForItem(item):
 		return {"fat": 140.0, "sugar": 20, "sodium": 43}
 	return {"fat": 120.0, "sugar": 20, "sodium": 43}
 
+
+def gaussianEquation(difference):
+	return .1 ** ((difference * difference)/200.0)
 
 def weighItem(item, date):
 
