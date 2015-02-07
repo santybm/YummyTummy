@@ -4,15 +4,16 @@ import math
 
 
 def ingredientsForItem(item):
-
-	if item["name"] == "Tomato":
-		return ["Tomato"]
-	return ["Tomato", "Onion", "Lettuce", "Wheat"]
+	return item["item"]["ingredients"]
+	# if item["name"] == "Tomato":
+	# 	return ["Tomato"]
+	# return ["Tomato", "Onion", "Lettuce", "Wheat"]
 
 def nutritionForItem(item):
-	if item["name"] == "Tomato":
-		return {"fat": 140.0, "sugar": 20, "sodium": 43}
-	return {"fat": 120.0, "sugar": 20, "sodium": 43}
+	return {"sodium": item["item"]["nutritionID"]["sodium"], "sugar": item["item"]["nutritionID"]["sugar"], "fat": item["item"]["nutritionID"]["fat"]}
+	# if item["name"] == "Tomato":
+	# 	return {"fat": 140.0, "sugar": 20, "sodium": 43}
+	# return {"fat": 120.0, "sugar": 20, "sodium": 43}
 
 
 def gaussianEquation(difference):
