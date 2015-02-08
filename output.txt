@@ -1,0 +1,104 @@
+Whole Wheat French Toast
+Cooked Oatmeal
+Whole Wheat Pancakes
+Cinnamon-Sugar Donut
+Cinnamon-Sugar Donut
+Chicken Parmesan
+Whole Wheat Pasta
+Apple Cinnnamon Scone
+Turkey Burger
+Whole Wheat Pancakes
+Crispy French Fries
+Sausage Alfredo Casserole
+Turkey Sandwich with Cranberry Mayo
+Sage Roasted Turkey
+Peas and Carrots
+Latin Pork Roast Station, The Works
+Naan Bread
+Steamed Cauliflower
+Cheddar-Chive Mashed Potatoes
+Vegan Breaded Tofu Fingers
+Grilled Montreal Salmon
+Vegetable Linguine Alfredo
+Vegetable Linguine Alfredo
+Creamy Tomato Soup
+Fish Tacos
+Macaroni Station
+Macaroni Station
+Savory Peach Chicken
+White Rice
+Chicken Dilruba (India)
+French Dip Au Jus
+Roast Top Round of Beef
+Steak Fries
+Orange Cinnamon French Toast
+Orange Cinnamon French Toast
+Granola Crisp French Toast
+Granola Crisp French Toast
+Crispy French Fries
+Steamed Orange Fish
+Rice Noodles (Fettuccine)
+Ginger Bok Choy
+Whole Wheat Blueberry Pancakes
+Whole Wheat Blueberry Pancakes
+Whole Wheat Blueberry Pancakes
+Tomato Rice Soup
+Grilled Cheese, Tomato, & Onion
+Cooked Oatmeal
+Cage Free Scrambled Eggs
+Bacon, Egg and Cheese Biscuit
+Whole Wheat French Toast
+Whole Wheat French Toast
+Bacon, Egg and Cheese Biscuit
+Spaghetti w/ Broccoli Rabe & Italian Sausage
+Parmesan Cheese
+Blue Ribbon Meatloaf
+Scallion Mashed Potatoes
+Tarragon Carrots
+Lobster
+Cinnamon Streusel Flatbread
+Cinnamon Streusel Flatbread
+Smoky Sauteed Spinach
+Jerk Pork Loin
+Macaroni and Cheese
+Macaroni and Cheese
+Buttermilk Biscuits
+Cheese Pizza
+Crispy Shoestring French Fries
+Mesquite Chicken Quesadilla
+Orange Spiced Carrots
+Baked Rotisserie Chicken 1/8 cut
+Chicken Piccata over Linguine
+Chocolate Chunk Cookies
+Banana Foster Crisp
+Steak Fries
+French Dip Au Jus
+Roast Top Round of Beef
+Beef Noodle Bowl
+Ham, Egg and Cheese Bagel
+Roast Beef with Caramelized Onions Sandwich
+Roast Beef with Caramelized Onions Sandwich
+Chicken Marsala
+Cinnamon Streusel Flatbread
+El Pollo Rico (Peruvian Chicken)
+Cheese Pizza
+Crispy Chicken Nuggets
+Fresh Cut French Fries
+Baked Potato
+Rotisserie Chicken
+Pasta Fagioli
+Pasta Fagioli
+Pasta Fagioli
+Egg, Sausage and Cheese Bagel
+Braised Pork Carnitas
+Mexican Rice
+Chicken Picatta
+Green Beans
+Canada Maple Grilled Chicken
+Canada Maple Grilled Chicken
+Canada Maple Grilled Chicken
+Canada Maple Grilled Chicken
+[(u'Spicy Meatball Sandwich', 407.4360733498048), (u'Seafood Cioppino', 407.695358996894), (u'Mixed Green Salad', 407.9952223513492), (u'Charro Beans', 408.6094984926616), (u'New England Clam Chowder', 408.78384951031916)]
+
+
+None
