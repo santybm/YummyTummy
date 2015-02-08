@@ -1,4 +1,4 @@
-***REMOVED***
+#!venv/bin/env python
 
 import settings_local
 import calendar
@@ -52,7 +52,7 @@ class recEngine:
 			self.itemScores.append(self.itemWithScore(item.NutritionItem,freqTuple))
 
 		#print(itemScores)
-
+		
 		self.itemScores.sort(key=operator.itemgetter(1))
 		ingredSorted = self.itemScores
 		#nutriSorted.sort(key=operator.itemgetter(2))
