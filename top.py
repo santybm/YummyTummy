@@ -48,6 +48,11 @@ def recommends(dateTime,user, location):
 
 	print(ingredSorted[:5])
 
+	print("\n")
+
+	s = sorted(freqTuple[0].values())
+	print(sorted(freqTuple[0].items(), key=lambda x:x[1]))
+
 	#return (ingredSorted[:5],nutriSorted[:5])
 
 	
