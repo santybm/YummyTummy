@@ -3,6 +3,12 @@ body{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
+.text{
+
+	font-size: 20px;
+
+}
+
 .navbar{
 
 	height: 150px;

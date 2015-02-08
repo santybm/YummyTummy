@@ -3,7 +3,7 @@ window.onload = function () {
 	var values;
 
 	
-	var frequencyChart = {
+	var frequencyChart1 = {
 		title: {
 			text: "Frequency Analysis"
 		},       
@@ -12,11 +12,34 @@ window.onload = function () {
 				{
 					type: "bar", //change it to line, area, bar, pie, etc
 					
-					dataPoints: [ 
+					dataPoints: [  {y: 3.656596708344897, label: "Vegan Pumpkin Bread"},
+									{y: 3.637705166049602, label: "Mixed Green Salad"},
+									{y: 3.647026497395958, label: "New England Clam Chowder"},
+									{y: 3.659165472888237, label: "Cream of Vegetable Soup"},
 								]
 				}
 			]
 	};
+	/*var frequencyChart = {
+		title: {
+			text: "Frequency Analysis"
+		},       
+        animationEnabled: true,	
+		data: [
+				{
+					type: "bar", //change it to line, area, bar, pie, etc
+					
+					dataPoints: [  {y: 3.656596708344897, label: "Vegan Pumpkin Bread"},
+									{y: 3.637705166049602, label: "Mixed Green Salad"},
+									{y: 3.647026497395958, label: "New England Clam Chowder"},
+									{y: 3.659165472888237, label: "Cream of Vegetable Soup"},
+								]
+				}
+			]
+	};*/
+
+
+	console.log(frequencyChart1.data[0].dataPoints[2]);
 
 	$("td").click(function() {
 		var URL = "";
@@ -33,32 +56,37 @@ window.onload = function () {
 		//foo = $.parseJSON(result);
 		//console.log(foo);
 		i = 0;
+		
 		var dict ={};
 		
 		for (var name in result){ //dynamically attaches items
 			
 			data = result[name];
-			dict.x = i;
 			
-			dict.y = data;
+			dict.y = data/10;
 			
 			dict.label = String(name);
+			
 			console.log("i",i);
-			console.log("label", data);
+			
 			console.log("object", dict);
 			
 			frequencyChart.data[0].dataPoints[i] = dict;
 			i++;
 		
 		};
+		//$("#frequency").CanvasJSChart(frequencyChart);
+		
 		console.log(frequencyChart.data[0].dataPoints);
-		$("#frequency").CanvasJSChart(frequencyChart);
+		
+		
 
 	});
+
 	
 });
 
-
+$("#frequency1").CanvasJSChart(frequencyChart1);
 	
 
 	

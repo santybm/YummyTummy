@@ -55,8 +55,8 @@ def check():
         pre_json[item_name[x]] = item_freq[x]
         #print pre_json, pre_json[item_name[x]]"""
     
-    #result = json.dumps(pre_json)
-    return jsonify(topFiveDict)
+    
+    return json.dumps(topFiveDict)
 
 if __name__ == '__main__': # has to be the last line
     app.run(debug=True)
