@@ -4,13 +4,13 @@ import math
 
 
 def ingredientsForItem(item):
-	return item["item"]["ingredients"]
+	return item["Item"]["ingredients"]
 	# if item["name"] == "Tomato":
 	# 	return ["Tomato"]
 	# return ["Tomato", "Onion", "Lettuce", "Wheat"]
 
 def nutritionForItem(item):
-	return {"sodium": item["item"]["nutritionID"]["sodium"], "sugar": item["item"]["nutritionID"]["sugar"], "fat": item["item"]["nutritionID"]["fat"]}
+	return {"sodium": item["Item"]["nutritionID"]["sodium"], "sugar": item["Item"]["nutritionID"]["sugar"], "fat": item["Item"]["nutritionID"]["fat"]}
 	# if item["name"] == "Tomato":
 	# 	return {"fat": 140.0, "sugar": 20, "sodium": 43}
 	# return {"fat": 120.0, "sugar": 20, "sodium": 43}
@@ -21,7 +21,7 @@ def gaussianEquation(difference):
 
 def weighItem(item, date):
 
-	itemDate = item["timeStamp"]
+	itemDate = item["Date"]
 	dateDelta = date - itemDate
 	dateDifferenceWeight = gaussianEquation(dateDelta.days)
 
