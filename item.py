@@ -10,3 +10,9 @@ class Menu(Object):
 
 class NutritionLabel(Object):
 	pass
+
+class User(Object):
+	pass
+
+class Tummy(Object):
+	pass
