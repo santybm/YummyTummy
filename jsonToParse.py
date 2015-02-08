@@ -67,7 +67,7 @@ def getAllItems():
 	for item in items['results']:
 		nutLabel = NutritionLabel(calories=item['Calories'])
 		nutLabel.save()
-		parseItem = Item(name=item['ItemName'], nutritionID=nutLabel)
+		parseItem = Item(name=item['ItemName'], nutritionID=nutLabel, oldObjectID=item['objectId'])
 		parseItem.save()
 
 
