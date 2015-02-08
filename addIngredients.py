@@ -9,7 +9,9 @@ import json,httplib,urllib
 import urllib2
 from bs4 import BeautifulSoup
 import time
+import pickle
 import csv
+import operator
 from parse_rest.datatypes import Object as ParseObject
 class NutritionLabel(ParseObject):
 	pass
@@ -20,12 +22,21 @@ class Item(ParseObject):
 class BU_All_Items(ParseObject):
 	pass
 
+class _User(ParseObject):
+	pass
+
+class User(ParseObject):
+	pass
+
+class Tummy(ParseObject):
+	pass
+
 
 APPLICATION_ID = "OaKii8zZrJDouyJcTe4d6VJuSleCfhWPtYxkjR1O"
 REST_API_KEY = "oVHQ4xqopYCvhqvPnvPLknehNG9ctZwWv7OHYKk2"
 MASTER_KEY = "M32h6B56OmAb2zq5FB1TOMAdI7TPU4d1JRwGcsrZ"
-register(APPLICATION_ID, REST_API_KEY)
-#register("ab2PDO430oZeLB4cI4GAUFjdWcgKGtJcQUe291UW", "7mjGlKBqovrJxgZY6osHZMkET4AlXlgpyiroNCYl")
+#register(APPLICATION_ID, REST_API_KEY)
+register("ab2PDO430oZeLB4cI4GAUFjdWcgKGtJcQUe291UW", "7mjGlKBqovrJxgZY6osHZMkET4AlXlgpyiroNCYl")
 
 def getItemAddIngredient():
 	#Get all items in a day
@@ -301,6 +312,51 @@ def csvNutritionToParse():
 			print nameToItem[name].name + " - Saved"
 			nameToItem.pop(name)
 
+def exportUserTummy():
+	user = _User.Query.get(email="agonchar@bu.edu")
+	tummy = Tummy.Query.filter(User=user)
+	tummy1 = tummy.limit(1000)
+	tummyList = []
+	for t in tummy1:
+		tummyList.append(t.Item.ItemName)
+
+	print tummyList
+
+def addToTummy():
+
+	tummyItems = [u'Sweet and Sour Chicken', u'Corn Muffin', u'Roasted Maine Potatoes', u'Seasoned Greens', u'Portabella Basil Pizza', u'Homestyle Mashed Potatoes', u'Baked Fish & Chips']
 
 
-getAllItemIds()
+	user = User.Query.get(email="agonchar@bu.edu")
+
+	itemListIDs = []
+	for ti in tummyItems:
+		itemId = Item.Query.filter(name=ti)
+		if itemId[0] is not None:
+			itemListIDs.append(itemId[0])
+
+	for i in itemListIDs:
+		tummyItem = Tummy(Active=True, Item=i, User=user, Date=datetime.now())
+		tummyItem.save()
+
+
+
+def getMyTummyItems():
+	user = User.Query.get(FBName="bQbTxdNsVb")
+	tummy = Tummy.Query.filter(User=user)
+
+	uniqItems = {}
+	for t in tummy:
+		if t.Item.name in uniqItems:
+			uniqItems[t.Item.name][0] += 1
+		else:
+			uniqItems[t.Item.name] = [1, t.Item.objectId]
+
+
+	sortedx = sorted(uniqItems.items(), key=operator.itemgetter(1), reverse=False)
+	
+	for x in sortedx:
+		print x
+	#print uniqItems
+
+addToTummy()
