@@ -4,7 +4,9 @@ import math
 
 
 def ingredientsForItem(item):
-	return item["Item"]["ingredients"]
+	print(item.Item.name)
+	return item.Item.ingredients
+	#return item["Item"]["ingredients"]
 	# if item["name"] == "Tomato":
 	# 	return ["Tomato"]
 	# return ["Tomato", "Onion", "Lettuce", "Wheat"]
@@ -22,7 +24,8 @@ def gaussianEquation(difference):
 
 def weighItem(item, date):
 
-	itemDate = item["Date"]
+	#itemDate = item["Date"]
+	itemDate = item.Date
 	dateDelta = date - itemDate
 	dateDifferenceWeight = gaussianEquation(dateDelta.days)
 
