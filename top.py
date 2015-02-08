@@ -2,6 +2,7 @@
 
 import settings_local
 import calendar
+import operator
 from item import Item, Menu, NutritionLabel
 from parse_rest.connection import register
 from datetime import datetime
@@ -9,9 +10,23 @@ from datetime import datetime
 
 
 def recommends(dateTime,user, location):
-	getMenu(dateTime,location)
+	itemScores = []
+	nutriSorted = []
+	ingredSorted = []
+	menu = getMenu(dateTime,location)
 	freqTuple = freqAnalysis(user)
-	itemWithScore(items)
+
+	for item in menu.items:
+		itemScores.append(itemWithScore(item,item.NutritionLabel,freqTuple))
+
+	itemScores.sort(key=operator.itemgetter(1))
+	ingredSorted = itemScores
+	nutriSorted.sort(key=operator.itemgetter(2))
+	nutriSorted = itemScores
+
+	return (ingredSorted[:5],nutriSorted[:5])
+
+	
 
 def itemWithScore(item,nutritionLabel,freqTuple):
 	ingredientFreq = freqTuple[0]
@@ -25,8 +40,6 @@ def itemWithScore(item,nutritionLabel,freqTuple):
 			tumScore += abs(1-freqValue)
 		except:
 			score += 1
-
-	for nutrition in item.nutrition:
 
 	tumScore += abs(len(ingredientFreq)-len(item.ingredients))
 
@@ -55,8 +68,6 @@ def getMenu(timeStamp,location):
 		meal = 2
 	else:
 		return 0
-
-
 
 	return Menu.Query.get(Date=output_date,Meal=meal,Location=location)
 
