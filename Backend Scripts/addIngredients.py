@@ -274,10 +274,10 @@ def getAllItemIds():
 def csvNutritionToParse():
 	BUItemsList = []	
 
-	all_day_items = Item.Query.all()
+	allitems = Item.Query.all()
 
-	page1k = all_day_items.limit(1000)
-	page2k = all_day_items.skip(1000).limit(2000)
+	page1k = allitems.limit(1000)
+	page2k = allitems.skip(1000).limit(2000)
 
 	for item in page1k:
 		BUItemsList.append(item)
@@ -285,32 +285,35 @@ def csvNutritionToParse():
 	for item in page2k:
 		BUItemsList.append(item)
 
-
-	print (BUItemsList)
-
-	NameToNutritionList = {}
-	with open('jsonFiles/nutritionFiles.csv', 'rU') as f:
-		reader = csv.reader(f, delimiter=',')
-		for row in reader:
-			NameToNutritionList[row[0]] = [row[1], row[2], row[3]]
-			#fat sodium sugar
-
+	nuts = {}
+	with open('../jsonFiles/turk-results3.csv', 'rU') as f:
+	 	reader = csv.reader(f, delimiter=',')
+	 	for row in reader:
+	 		print (row[1])
+	 		nuts[row[0]] = [float(row[1]), float(row[2]), float(row[3]), float(row[4]), float(row[5]), float(row[6]), float(row[7])]
+	 		#nut	Answer.carbs	Answer.cholesterol	Answer.fat	Answer.fiber	Answer.protein	Answer.sodium	Answer.sugars
 	f.close()
 
-	nameToItem = {}
+	nutToItem = {}
 	for item in BUItemsList:
-		itemName = str(item.name)
-		nameToItem[itemName] = item
-	print nameToItem
-
-	for name in NameToNutritionList:
-		if name in nameToItem:
-			nameToItem[name].fat = NameToNutritionList[name][0]
-			nameToItem[name].sodium = NameToNutritionList[name][1]
-			nameToItem[name].sugar = NameToNutritionList[name][2]
-			nameToItem[name].save()
-			print nameToItem[name].name + " - Saved"
-			nameToItem.pop(name)
+		nutId = str(item.NutID)
+		nutToItem[nutId] = item
+	print nuts
+	#print nutToItem
+	for nut in nuts:
+		if nut in nutToItem:
+			nutIDObject = nutToItem[nut].nutritionID
+			print nutIDObject
+			nutIDObject.carbs = nuts[nut][0]
+			nutIDObject.cholesterol = nuts[nut][1]
+	 		nutIDObject.fat = nuts[nut][2]
+	 		nutIDObject.fiber = nuts[nut][3]
+	 		nutIDObject.protein = nuts[nut][4]
+	 		nutIDObject.sodium = nuts[nut][5]
+	 		nutIDObject.sugar = nuts[nut][6]
+	 		nutIDObject.save()
+	 		print nutToItem[nut].NutID + " - Saved"
+	 		nutToItem.pop(nut)
 
 def exportUserTummy():
 	user = _User.Query.get(email="agonchar@bu.edu")
@@ -359,4 +362,4 @@ def getMyTummyItems():
 		print x
 	#print uniqItems
 
-addToTummy()
+csvNutritionToParse()
