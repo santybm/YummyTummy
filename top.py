@@ -124,8 +124,10 @@ register(settings_local.APPLICATION_ID,settings_local.REST_API_KEY)
 
 if __name__ == "__main__":
 	t = datetime(2015,02,06,19,00)
-	test = recEngine(t, 'Carlos Cheung', 'Baystate',5)
-	print(test.recommends())
+	test = recEngine(t, 'Santiago Beltran', 'Baystate',5)
+	test.recommends()
+	print(test.sortedFreq)
+	#print(test.mostHatedItems)
 	#recommends(t,'Carlos Cheung','Baystate',5)
 #recommend('Erin Dail',t)
 
