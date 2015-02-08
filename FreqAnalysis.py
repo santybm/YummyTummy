@@ -10,7 +10,8 @@ def ingredientsForItem(item):
 	# return ["Tomato", "Onion", "Lettuce", "Wheat"]
 
 def nutritionForItem(item):
-	return {"sodium": item["Item"]["nutritionID"]["sodium"], "sugar": item["Item"]["nutritionID"]["sugar"], "fat": item["Item"]["nutritionID"]["fat"]}
+	return {}
+	# return {"sodium": item["Item"]["nutritionID"]["sodium"], "sugar": item["Item"]["nutritionID"]["sugar"], "fat": item["Item"]["nutritionID"]["fat"]}
 	# if item["name"] == "Tomato":
 	# 	return {"fat": 140.0, "sugar": 20, "sodium": 43}
 	# return {"fat": 120.0, "sugar": 20, "sodium": 43}
