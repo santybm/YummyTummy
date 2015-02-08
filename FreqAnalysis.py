@@ -51,9 +51,9 @@ def freqAnaysis(items, date):
 
 		for ingredient in itemIngredients:
 			if ingredient in ingredientFreqency:
-				ingredientFreqency[ingredient] += itemWeight + gaussianEquation(i)
+				ingredientFreqency[ingredient] += itemWeight * gaussianEquation(i)
 			else:
-				ingredientFreqency[ingredient] = itemWeight + gaussianEquation(i)
+				ingredientFreqency[ingredient] = itemWeight * gaussianEquation(i)
 
 			i += 1.0
 
