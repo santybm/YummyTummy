@@ -47,11 +47,15 @@ def freqAnaysis(items, date):
 		itemWeight = weighItem(item, date)
 		totalConsumptionWeight += itemWeight
 
+		i = 0.0
+
 		for ingredient in itemIngredients:
 			if ingredient in ingredientFreqency:
-				ingredientFreqency[ingredient] += itemWeight
+				ingredientFreqency[ingredient] += itemWeight + gaussianEquation(i)
 			else:
-				ingredientFreqency[ingredient] = itemWeight
+				ingredientFreqency[ingredient] = itemWeight + gaussianEquation(i)
+
+			i++
 
 		for key in nutritionForItem(item):
 			if key in nutritionFreqency:
