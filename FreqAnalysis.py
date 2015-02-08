@@ -4,7 +4,7 @@ import math
 
 
 def ingredientsForItem(item):
-	print(item.Item.name)
+	#print(item.Item.name)
 	return item.Item.ingredients
 	#return item["Item"]["ingredients"]
 	# if item["name"] == "Tomato":
