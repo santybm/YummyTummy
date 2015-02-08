@@ -9,16 +9,23 @@ import json,httplib,urllib
 import urllib2
 from bs4 import BeautifulSoup
 import time
+import csv
+from parse_rest.datatypes import Object as ParseObject
+class NutritionLabel(ParseObject):
+	pass
 
+class Item(ParseObject):
+	pass
 
 class BU_All_Items(ParseObject):
-    pass
+	pass
 
 
 APPLICATION_ID = "OaKii8zZrJDouyJcTe4d6VJuSleCfhWPtYxkjR1O"
 REST_API_KEY = "oVHQ4xqopYCvhqvPnvPLknehNG9ctZwWv7OHYKk2"
 MASTER_KEY = "M32h6B56OmAb2zq5FB1TOMAdI7TPU4d1JRwGcsrZ"
 register(APPLICATION_ID, REST_API_KEY)
+#register("ab2PDO430oZeLB4cI4GAUFjdWcgKGtJcQUe291UW", "7mjGlKBqovrJxgZY6osHZMkET4AlXlgpyiroNCYl")
 
 def getItemAddIngredient():
 	#Get all items in a day
@@ -198,8 +205,6 @@ def testWebQuery():
 
 def csvToParse():
 
-	import csv
-
 	BUItemsList = []	
 
 	all_day_items = BU_All_Items.Query.filter(ingridentsList=None)
@@ -233,5 +238,69 @@ def csvToParse():
 			nameToItem[ingridID].save()
 			print nameToItem[ingridID].ItemName + " - Saved"
 			nameToItem.pop(ingridID)
-			
-stringToList()
+
+
+def getAllItemIds():
+	BUItemsList = []	
+
+	all_day_items = BU_All_Items.Query.all()
+
+	page1k = all_day_items.limit(1000)
+	page2k = all_day_items.skip(1000).limit(2000)
+
+	for item in page1k:
+		BUItemsList.append(str(item.NutID))
+
+	for item in page2k:
+		BUItemsList.append(str(item.NutID))
+
+	writer = csv.writer(open("jsonFiles/input.csv", 'w'))
+	for i in BUItemsList:
+		writer.writerow(["http://www.bu.edu/nisprod/dining/data/menus/labels/" + i + ".gif"])
+
+
+
+def csvNutritionToParse():
+	BUItemsList = []	
+
+	all_day_items = Item.Query.all()
+
+	page1k = all_day_items.limit(1000)
+	page2k = all_day_items.skip(1000).limit(2000)
+
+	for item in page1k:
+		BUItemsList.append(item)
+
+	for item in page2k:
+		BUItemsList.append(item)
+
+
+	print (BUItemsList)
+
+	NameToNutritionList = {}
+	with open('jsonFiles/nutritionFiles.csv', 'rU') as f:
+		reader = csv.reader(f, delimiter=',')
+		for row in reader:
+			NameToNutritionList[row[0]] = [row[1], row[2], row[3]]
+			#fat sodium sugar
+
+	f.close()
+
+	nameToItem = {}
+	for item in BUItemsList:
+		itemName = str(item.name)
+		nameToItem[itemName] = item
+	print nameToItem
+
+	for name in NameToNutritionList:
+		if name in nameToItem:
+			nameToItem[name].fat = NameToNutritionList[name][0]
+			nameToItem[name].sodium = NameToNutritionList[name][1]
+			nameToItem[name].sugar = NameToNutritionList[name][2]
+			nameToItem[name].save()
+			print nameToItem[name].name + " - Saved"
+			nameToItem.pop(name)
+
+
+
+getAllItemIds()
