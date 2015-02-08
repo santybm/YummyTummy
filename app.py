@@ -59,6 +59,6 @@ def check():
     return json.dumps(topFiveDict)
 
 if __name__ == '__main__': # has to be the last line
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
 
 
