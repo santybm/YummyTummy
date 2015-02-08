@@ -105,9 +105,9 @@ def getUserItems(userName):
 	tummy = Tummy.Query.filter(User=user)
 
 	return tummy
-
-t = datetime(2015,02,06,13,00)
-recommends(t,'Santiago Beltran','Baystate')
+if __name__ == "__main__":
+	t = datetime(2015,02,06,13,00)
+	recommends(t,'Santiago Beltran','Baystate')
 #recommend('Erin Dail',t)
 
 
