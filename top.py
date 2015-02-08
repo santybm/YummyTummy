@@ -46,7 +46,7 @@ def recommends(dateTime,user, location):
 	#nutriSorted.sort(key=operator.itemgetter(2))
 	#nutriSorted = itemScores
 
-	print(ingredSorted[:5])
+	print(ingredSorted[:20])
 
 	#return (ingredSorted[:5],nutriSorted[:5])
 
