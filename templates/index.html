@@ -20,29 +20,64 @@
 		
 		<nav class="navbar navbar-default navbar-static-top">
 		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
 		      <a class="navbar-brand text" href="#"><b>Yummy Tummy</b></a>
 		    </div>
-
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav navbar-right">
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
 		</nav>
+
+		<div class = "container">
+			<b><h1>About Yummy Tummy:</h1>{% if hall %}<h1>{{ hall }}</h1> {% endif %}
+			<p class="text-center">Using the data from the current BU Food App, which allows our fellow Boston University students to see what's available in the dining halls and keep track of what they eat for nutrition, we figured that the amount of choices available in the dining halls and the data we're collecting could be used to build a food recommendation engine to enhance the user experience. By recommending personally tailored items, the YummyTummy engine not only recognizes what users eat, but when they eat it, how often, and what tastes they most enjoy. The data is then used to recommend the most delicious dish for that user based on any menu they pick.</p></b>
+		</div><br>
+
+		<div class="container">
+			<table class="table table-hover">
+			   <thead>
+			      <tr>
+			         <th>Name</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			      <tr>
+			         <td>Femke Hermse</td>
+			      </tr>
+			      <tr>
+			         <td>Alexandra Creed</td>
+			      </tr>
+			      <tr>
+			         <td>Abbey Kaelberer</td>
+			      </tr>
+			      <tr>
+			         <td>Ashley Reischman</td>
+			      </tr>
+			      <tr>
+			         <td>Santiago Beltran</td>
+			      </tr>
+			      <tr>
+			         <td>Kylie Obermeier</td>
+			      </tr>
+			      <tr>
+			         <td>Erin Dail</td>
+			      </tr>
+			      <tr>
+			         <td>Fu Bedard</td>
+			      </tr>
+			      <tr>
+			         <td>Andrew Klufas</td>
+			      </tr>
+			      <tr>
+			         <td>Madison Alspector</td>
+			      </tr>
+			   </tbody>
+			</table>
+		</div>
 
 		<div class = "container">
 			<div id="frequency" style="height: 500px; width: 100%;"></div>
 		</div>
 		
+
+
 		<div class="row">
 		  <div class="col-md-6"><div id="frequency1"></div></div>
 		  <div class="col-md-6"><div id="frequency2"></div></div>
