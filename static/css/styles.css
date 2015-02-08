@@ -1,0 +1,33 @@
+body{
+
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+.navbar{
+
+	height: 150px;
+
+
+}
+
+.canvasjs-chart-credit{
+
+	color:#FFFFFF !important;
+}
+
+.navbar{
+	background-color: #CC0000;
+
+}
+.navbar-brand{
+
+
+	color: white !important;
+	font-size: 80px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    padding-top: 60px;
+}
