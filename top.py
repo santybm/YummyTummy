@@ -4,7 +4,6 @@ import settings_local
 import calendar
 import operator
 from FreqAnalysis import freqAnaysis
-from item import Item, Menu, NutritionLabel
 from parse_rest.connection import register
 from datetime import datetime
 from parse_rest.datatypes import Object as ParseObject
@@ -65,7 +64,7 @@ def itemWithScore(item,freqTuple):
 		except:
 			tumScore += 1
 
-	#tumScore += abs(len(ingredientFreq)-len(item.ingredients))
+	tumScore += abs(len(ingredientFreq)-len(item.ingredients))
 
 	return (item.name,tumScore)
 
